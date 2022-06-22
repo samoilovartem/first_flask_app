@@ -1,0 +1,14 @@
+webapp/
+    __init__.py
+    config.py
+    db.py
+    user/
+        __init__.py
+        forms.py
+        models.py
+        views.py
+    templates/
+        base.html
+        user/
+            login.html
+            registration.html
