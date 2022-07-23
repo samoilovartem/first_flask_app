@@ -12,7 +12,34 @@
 
 <div class="row">
     <div class="col-8 news-content">
+        {% include('messages.html') %}
         {{ news.text|safe }}
+        {% if news.comments %}
+        <h3>Comments:</h3>
+            {% for comment in news.comments %}
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">{{ comment.text }}</p>
+                    <p class="card-text">
+                        <small>{{ comment.created.strftime('%B %d, %Y') }} |
+                            {{ comment.user.username }}</small>
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+        {% if current_user.is_authenticated %}
+        <form action="{{ url_for('news.add_comment') }}" method="POST">
+            {{ comment_form.hidden_tag() }}
+            <div class="mb-3">
+                {{ comment_form.comment_text.label }}
+                {{ comment_form.comment_text() }}
+            </div>
+            <input class="btn btn-primary btn-sm" type="submit" value="Add comment">
+        </form>
+        {% else %}
+            Please <a href="{{ url_for('user.login', next=request.full_path) }}">log in</a> if you want to leave a comment
+        {% endif %}
     </div>
     <div class="col-4">
         <h2>Other news</h2>
