@@ -1,6 +1,6 @@
 # Python news Flask app
 
-Originally this project was just my first flask app that displays collected in advance (parsed) Python news from [python.org](), but now the parsing process is automated (Celery) and the news source has been changed to [habr.com]() due to more interesting content. Also, there is a weather displaying based on API by [worldweatheronline.com]().
+Originally this project was just my first flask app that displays collected in advance (parsed) Python news from [python.org](https://python.org), but now the parsing process is automated (Celery) and the news source has been changed to [habr.com](https://habr.com) due to more interesting content. Also, there is a weather displaying based on API by [worldweatheronline.com](https://worldweatheronline.com).
 
 ![alt text](https://miro.medium.com/max/1000/1*ZOq0qpYsOAy6a5dkv8s7Ew.jpeg)
 
